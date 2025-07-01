@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function data(){
+
+var a=document.getElementById("n1").value;
+var b=document.getElementById("n2").value;
+var c=document.getElementById("n3").value;
+var d=document.getElementById("n4").value;
+if(a==""|| b==""|| c==""||d=="")
+{
+    alert("all fields should be filled");
+    return false;
+}
+else if(b.length<10|| b.length>10)
+{
+    alert("Number should be 10 digits");
+    return false;
+}
+else if(isNaN(b))
+{
+    alert("Only Numbers are allowed");
+    return false;
+}
+else if(c!=d)
+{
+    alert("Please Enter Same PAssword");
+    return false;
+}
+else {
+    true;
+}
+        }
+    </script>
+</head>
+<body>
+    <form onsubmit=" return data()" action="submit.html">
+
+        UserID:       <input type="text" name="ID" id="n1"><br>
+         Contact:       <input type="text" name="contact" id="n2"><br>
+          Password:       <input type="text" name="contact" id="n3"><br>
+           Confirm Password:       <input type="text" name="contact" id="n4"><br>
+           <input type="submit">
+    </form>
+</body>
+</html>
