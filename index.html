@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+            form {
+    transition: transform 0.3s;
+    }
+    form:active {
+    transform: scale(0.98);
+    }
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f0f2f5;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+    }
+
+    form {
+        background-color: #ffffff;
+        padding: 20px 30px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        width: 300px;
+    }
+
+    form input[type="text"] {
+        width: 100%;
+        padding: 8px;
+        margin: 8px 0 16px 0;
+        box-sizing: border-box;
+        border: 1px solid #716868;
+        border-radius: 4px;
+    }
+     form input[type="password"] {
+        width: 100%;
+        padding: 8px;
+        margin: 8px 0 16px 0;
+        box-sizing: border-box;
+        border: 1px solid #716868;
+        border-radius: 4px;
+    }
+
+    form input[type="submit"] {
+        background-color: #4CAF50;
+        color: white;
+        padding: 10px 15px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        width: 100%;
+        font-size: 16px;
+    }
+
+    form input[type="submit"]:hover {
+        background-color: #45a049;
+    }
+
+    label {
+        display: block;
+        margin-bottom: 5px;
+        font-weight: bold;
+    }
+</style>
+
+    <script>
+        function data(){
+        var a=document.getElementById('fname').value;
+        var b=document.getElementById('lname').value;
+        var c=document.getElementById('contact').value;
+        var d=document.getElementById('pas1').value;
+        var e=document.getElementById('pas2').value;
+
+        if(a==""||b==""||c==""||d==""||e=="") 
+        {
+            alert("All fields must be filled")
+            return false;
+        }
+        else if(c.length<10|| c.length>10){
+            alert("Contact Number must be of 10 numbers")
+            return false;
+        }
+        else if(isNaN(c))
+{
+    alert("Only Numbers are allowed in contact");
+    return false;
+}
+else if(d!=e)
+{
+    alert("Please Enter Same Password");
+    return false;
+}
+if (d.length < 8) {
+  alert("Password must be at least 8 characters");
+  return false;
+}
+        else{
+            true;
+        }
+    }
+
+    </script>
+</head>
+<body>
+    <form action="submit.html" onsubmit=" return data()">
+<label for="fname">First Name:</label>
+<Input type="text" id="fname"><br>
+<label for="lname">Last Name:</label>
+ <input type="text" id="lname"><br>
+<label for="contact">Contact:</label>
+ <input type="text" id="contact"><br>
+<label for="pas1">Password:</label>
+<input type="password" id="pas1"><br>
+<label for="pas2">Confirm Password:</label>
+<input type="password" id="pas2"><br>
+<input type="submit" value="Submit">
+    </form>
+    
+</body>
+</html>
